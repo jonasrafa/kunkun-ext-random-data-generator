@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schema.kunkun.sh",
+  "name": "kunkun-ext-random-data-generator",
+  "version": "0.0.10",
+  "license": "MIT",
+  "type": "module",
+  "author": "Jonas Almeida",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonasrafa/kunkun-ext-random-data-generator"
+  },
+  "kunkun": {
+    "name": "Random Data Generator",
+    "shortDescription": "Generate random data using Faker library",
+    "longDescription": "Generate random data using Faker library",
+    "identifier": "random-data-generator",
+    "permissions": [
+      "clipboard:write-text",
+      {
+        "permission": "open:url",
+        "allow": [
+          {
+            "url": "https://**"
+          },
+          {
+            "url": "http://**"
+          }
+        ]
+      }
+    ],
+    "demoImages": [
+      "https://raw.githubusercontent.com/jonasrafa/kunkun-ext-random-data-generator/refs/heads/main/public/screenshot1.jpg",
+      "https://raw.githubusercontent.com/jonasrafa/kunkun-ext-random-data-generator/refs/heads/main/public/screenshot2.jpg"
+    ],
+    "icon": {
+      "type": "iconify",
+      "value": "fe:random"
+    },
+    "customUiCmds": [],
+    "templateUiCmds": [
+      {
+        "name": "Generate Random Data",
+        "description": "Generate random data using Faker library",
+        "main": "dist/index.js",
+        "cmds": []
+      }
+    ]
+  },
+  "scripts": {
+    "dev": "bun build.ts dev",
+    "build": "bun build.ts"
+  },
+  "dependencies": {
+    "@bugsnag/cuid": "^3.2.1",
+    "@faker-js/faker": "^7.6.0",
+    "@kksh/api": "0.1.5",
+    "i18next": "^23.16.8",
+    "is-url": "^1.2.4",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "./dist",
+    ".gitignore"
+  ]
+}
